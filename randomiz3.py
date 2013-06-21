@@ -11,6 +11,9 @@ def main():
 		print("Detected linux")
 		deviceDriver = pyudev.Context()
 		devices = deviceDriver.list_devices()
-		print(devices.attributes)
+		for device in devices:
+			print("_____________")	
+			print(device.sys_name)
+			print(device.device_path)
 if __name__=='__main__':
     main()
