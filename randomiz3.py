@@ -1,9 +1,16 @@
-import win32api
+import sys
+import pyudev
 def main():
-    print("---------------------------------------------------")
-    print(str(win32api.GetUserName())+" hope you enjoy the new songs!")
-    print("---------------------------------------------------")
-    drives = win32api.GetLogicalDriveStrings()
-    
+        os = sys.platform
+        if (os.find("win") != -1):
+		print("Detected windows")
+                #import win32api
+                #username = win32api.GetUsername()
+                #input("processing...")
+	elif (os.find("linux") != -1):
+		print("Detected linux")
+		deviceDriver = pyudev.Context()
+		devices = deviceDriver.list_devices()
+		print(devices.attributes)
 if __name__=='__main__':
     main()
