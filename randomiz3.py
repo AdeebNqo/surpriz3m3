@@ -25,6 +25,6 @@ def main():
 		print("Option "+str(option)+" it is then.")
 		print("path of chosen device is "+disk_devices[option-1].sys_name)
 		f = open("/dev/"+disk_devices[option-1].sys_name,"r")
-		print(dir(f))
+		print(f.readlines())
 if __name__=='__main__':
     main()
