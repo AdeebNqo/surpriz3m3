@@ -21,15 +21,9 @@ def main():
 				print("\t("+str(count+1)+") "+ device.sys_name)
 				count = count+1
 				disk_devices.append(device)
-		print(disk_devices[0].keys())
-		print("\n\n")
-		print(disk_devices[1].keys())
-		if (len(disk_devices) != 0):
-			option = input("choose phone: ")
-			print("Option "+str(option)+" it is then.")
-			print("path of chosen device is "+disk_devices[option-1].sys_name)
-			f = open("/dev/"+disk_devices[option-1].sys_name,"r")
-			print(f.readlines())
+				print(device.get("ID_FS_LABEL"))
+				print(device.get("ID_VENDOR"))
+				print(device.get("ID_MODEL"))
 		else:
 			print("No devices found. Bye!")
 if __name__=='__main__':
