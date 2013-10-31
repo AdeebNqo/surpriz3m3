@@ -9,6 +9,6 @@ n.notify()
 try:
 	d = bluetooth.discover_devices()
 	trans = transfer(d[0])
-	trans.send("/home/adeeb/Documents/programming/surpriz3m3/src")
-except bluetooth.btcommon.BluetoothError:
-	print("Could not connect")
+	trans.send("/home/adeeb/Documents/programming/surpriz3m3/src/setup.py")
+except bluetooth.btcommon.BluetoothError as this:
+	print("Could not connect %s " %this)
