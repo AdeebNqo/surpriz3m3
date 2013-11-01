@@ -1,5 +1,5 @@
 import bluetooth
-class transfer:
+class device:
 	#
 	# Creating data transfer object
 	# port is always 1 and address has to be provided
@@ -14,8 +14,9 @@ class transfer:
 	def get_services(self):
 		print("getting services...")
 		services = bluetooth.find_service(address=self.address)
-		print(services)
-		print('done!')
+		for service in services:
+			print(service)
+			print('------------------------')
 	#
 	# Method for sending data to
 	# default address
