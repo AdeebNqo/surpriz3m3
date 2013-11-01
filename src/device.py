@@ -14,9 +14,13 @@ class device:
 	def get_services(self):
 		print("getting services...")
 		services = bluetooth.find_service(address=self.address)
-		for service in services:
-			print(service)
-			print('------------------------')
+		return services
+	#
+	# Method for connecting to device for particular
+	# service hence the port of the service is needed
+	#
+	def connect(self, port):
+		self.socket.connect((self.address, port))
 	#
 	# Method for sending data to
 	# default address

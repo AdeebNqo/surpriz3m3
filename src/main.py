@@ -4,8 +4,6 @@
 import notif
 import bluetooth
 from bluzi import device
-n = notif.notif("/dev/nokia", "Nokia phone")
-n.notify()
 try:
 	d = bluetooth.discover_devices()
 	trans = device(d[0])
