@@ -7,7 +7,15 @@ class transfer:
 		self.port = 1
 		self.address = address
 		self.socket = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
-		self.socket.connect((address, self.port))
+		#self.socket.connect((address, self.port))
+	#
+	# Method for getting device services and their ports
+	#
+	def get_services(self):
+		print("getting services...")
+		services = bluetooth.find_service(address=self.address)
+		print(services)
+		print('done!')
 	#
 	# Method for sending data to
 	# default address
