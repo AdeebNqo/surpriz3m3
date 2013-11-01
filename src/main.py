@@ -22,7 +22,8 @@ try:
 	#
 	d = bluetooth.discover_devices()
 	trans = device(d[0])
-	print(trans.get_supported_ports())
+	print(trans.get_services())
+	trans.connect(10)
 	#trans.send("/home/adeeb/Documents/programming/surpriz3m3/src/setup.py")
 except bluetooth.btcommon.BluetoothError as this:
 	print("Could not connect %s " %this)
