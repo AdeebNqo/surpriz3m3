@@ -1,10 +1,25 @@
 #
 # Testing
 #
-import notif
+from notifications import notification
 import bluetooth
-from bluzi import device
+from device import device
+from actions import actions
+
+def yes():
+	print('yes!')
 try:
+	#
+	# Testing notifications
+	#
+	responses = actions(True)
+	responses.funclist['yes'] = yes
+	responses.funclist['no'] = yes
+	notif = notification("Zola")
+	notif.notify("This is a notification", notification.info, responses)
+	#
+	# Testing device connections
+	#
 	d = bluetooth.discover_devices()
 	trans = device(d[0])
 	trans.get_services()

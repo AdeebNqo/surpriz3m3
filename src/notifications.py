@@ -3,19 +3,19 @@
 # Class for notifying when device  detected
 #
 import pynotify
-class notifications:
+class notification:
 	#
 	# Notification types
 	#
 	info = "dialog-information"
 	
-	def __init__(self, devicePath, deviceName):
+	def __init__(self, deviceName):
 		self.title = "Music exchange"
 		self.deviceName = deviceName
 	def notify(self, msg, notif_type, actions):
 		pynotify.init(self.title)
-		self.notif = pynotify.Notification("Connected "+self.deviceName, msg, )
+		self.notif = pynotify.Notification(self.deviceName+" has been connected", msg, )
 		if (actions.activated):
-			self.notif.add_action("action_delete", "Yes", self.exchangeMusic)
-			self.notif.add_action("no_dontdelete", "No", self.dismissNotif)
+			self.notif.add_action("action_delete", "Yes", actions.funclist['yes'])
+			self.notif.add_action("no_dontdelete", "No", actions.funclist['no'])
 		self.notif.show()
