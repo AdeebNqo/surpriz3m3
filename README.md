@@ -16,3 +16,9 @@ a memory card or another device with bigger storage capacity --- I say let's imp
 This application should automatically replace the music with fresh new music from your computer
 such that you don't get bored or tired of listening to the same songs. This way you get rid of the
 burden of copying music from your pc manually.
+
+##Dependecies
+
+-pybluez (0.9 - later)
+-openobex (1.3 - later)
+-python (2.7 - later)
