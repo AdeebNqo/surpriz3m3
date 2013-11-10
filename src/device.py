@@ -6,7 +6,7 @@ class device:
 	def __init__(self, address):
 		self.service_ports = {}
 		self.address = address
-		self.ports_discovered = false
+		self.ports_discovered = False
 	#
 	# Method for getting device services and their ports
 	#
@@ -23,6 +23,6 @@ class device:
 	# Method for retrieving service ports
 	# @returns dictionary with port numbers, service name is the key
 	def get_service_ports(self):
-		if (!ports_discovered):
+		if (ports_discovered==False):
 			self.discover_service_ports()
 		return service_ports
