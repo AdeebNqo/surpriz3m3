@@ -3,8 +3,9 @@
 #
 from notifications import notification
 from device import device
-from actions import actions
+from actions import action
 import lightblue
+import time
 
 def yes():
 	print('yes!')
@@ -22,4 +23,14 @@ def yes():
 #
 # Testing device connections
 #
-print(lightblue.finddevices())
+
+found_devices=[]
+for i in range(2):
+	print("searching for bt device...")
+	found_devices = lightblue.finddevices()
+	if (len(found_devices) > 0):
+		break
+	print('No devices found')
+	if (i!=2):
+		print("will retry in 20 seconds.")
+		time.sleep(20)
