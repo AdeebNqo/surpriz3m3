@@ -26,3 +26,10 @@ class device:
 		if (ports_discovered==False):
 			self.discover_service_ports()
 		return service_ports
+	#
+	# Method for sending file to device
+	#
+	#def send(self, filename):
+	#	try:
+	#		obex.sendfile(self.address, self.service_ports[], filename)
+	#		return 0	

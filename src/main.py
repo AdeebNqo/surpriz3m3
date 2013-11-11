@@ -7,6 +7,8 @@ from actions import actions
 import lightblue
 import time
 
+import bluetooth
+
 def yes():
 	print('yes!')
 
@@ -26,16 +28,17 @@ def yes():
 
 selected_device = None
 found_devices=[]
+name_lookup = {}
 for i in range(2):
 	print("searching for bt device...")
-	found_devices = lightblue.finddevices()
+	found_devices = bluetooth.discover_devices()
 	if (len(found_devices) > 0):
-		selected_device = lightblue.selectdevice()
+		for device in found_devices:
+			name_lookup[device] = bluetooth.lookup_name(device)
 		break
 	print('No devices found')
 	if (i!=2):
 		print("will retry in 20 seconds.")
 		time.sleep(20)
 
-if (selected_device==None):
-	print('Issues with blutooth? Eish...suckz bein\' u.')
+##For testing purposes, we will use the first found device
