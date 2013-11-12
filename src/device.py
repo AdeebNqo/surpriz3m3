@@ -1,35 +1,13 @@
-import lightblue
+from bluetooth import *
+from OBEXClient import OBEXClient
 class device:
-	#
-	# Creating data transfer object address has to be provided
-	#
-	def __init__(self, address):
-		self.service_ports = {}
+	def __init__(self, address, port):
 		self.address = address
-		self.ports_discovered = False
-	#
-	# Method for getting device services and their ports
-	#
-	def get_services(self):
-		services = lightblue.findservices(self.address)
-		return services
-	#
-	# Method for determining/finding service ports
-	#
-	def discover_service_ports(self):
-		for service in self.get_services():
-			self.service_ports[service[2]] = service[1]
-	#
-	# Method for retrieving service ports
-	# @returns dictionary with port numbers, service name is the key
-	def get_service_ports(self):
-		if (ports_discovered==False):
-			self.discover_service_ports()
-		return service_ports
-	#
-	# Method for sending file to device
-	#
-	#def send(self, filename):
-	#	try:
-	#		obex.sendfile(self.address, self.service_ports[], filename)
-	#		return 0	
+		self.port = port
+		self.client = OBEXClient(address, port)
+		self.client.connect()
+	def send_file(pfile):
+		print("snedin file")
+	def disconnect():
+		self.client.disconnect()
+		
