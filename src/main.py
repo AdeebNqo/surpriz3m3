@@ -41,4 +41,4 @@ for i in range(2):
 		print("will retry in 20 seconds.")
 		time.sleep(20)
 
-##For testing purposes, we will use the first found device
+
