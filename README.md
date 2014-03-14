@@ -15,6 +15,13 @@ This application should automatically replace the music with fresh new music fro
 such that you don't get bored or tired of listening to the same songs. This way you get rid of the
 burden of copying music from your pc manually.
 
+##ToDo
+
+- [ ] Setup configuration settings
+- [ ] Detect devices
+- [ ] Copy and delete to and from device respectively
+- [ ] Choosing music randomly, accounting for available storage
+
 ##Dependecies
 
 - PyMTP 0.0.6
