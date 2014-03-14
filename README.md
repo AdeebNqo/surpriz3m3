@@ -1,16 +1,14 @@
 #surpriz3 m3
 
-The goal of this application is to surprise you. hehe, yes! suprize you.
-
-##What
 
 This application's purpose is to "randomly" exchange the music
-on your phone or any device using bleutooth and/or a serial cable connection.
+on your phone or any device compatible with mtp. You no longer have
+to be stuck with the same playlist if your storage is not that big.
 
 ##Why
 
 Some of us still use portable devices with very limited storage space for listening
-to music on the go. However, our computers are filled with terabytes of music , so instead of buying
+to music on the go. However, our computers are filled with terabytes of music, so instead of buying
 a memory card or another device with bigger storage capacity --- I say let's improvise.
 
 This application should automatically replace the music with fresh new music from your computer
@@ -19,6 +17,4 @@ burden of copying music from your pc manually.
 
 ##Dependecies
 
--pybluez (0.9 - later)
--openobex (1.3 - later)
--python (2.7 - later)
+- PyMTP 0.0.6
